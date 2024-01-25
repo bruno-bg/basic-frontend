@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Original design: https://youtu.be/9YAnhgyq4Ao?si=Ug6GlVv8muLs0pid -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Countdown Time</title>
@@ -59,18 +60,18 @@
 
         // Date calculation (end) !!! 
         // Date format in mm/dd/yyyy and time is hh:mm:ss
-        
+
         let endDate = '02/14/2024 00:00:00';
 
-        let x = setInterval(function(){
+        let x = setInterval(function () {
             let now = new Date(endDate).getTime();
             let countDown = new Date().getTime();
             let distance = now - countDown;
 
             // time calculation for days, hours, minutes and seconds
             let d = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / 
-            (1000 * 60 * 60));
+            let h = Math.floor((distance % (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60));
             let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             let s = Math.floor((distance % (1000 * 60)) / (1000));
 
@@ -91,14 +92,13 @@
             ss.style.strokeDashoffset = 440 - (440 * s) / 60;
 
             // if the count down in over, write happy new yar text
-            if(distance < 0){
+            if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("time").style.display = "none";
                 document.querySelector(".yourMsg").style.display = "block";
             }
 
         })
-        
 
     </script>
 
