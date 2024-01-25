@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Countdown Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="time">
+
+        <div class="circle" style="--clr:#1eb9ff;">
+            <svg>
+                <circle cx="70" cy="70" r="70" id="dd"></circle>
+            </svg>
+            <div id="days">00<br><span>Days</span></div>
+        </div>
+
+        <div class="circle" style="--clr:#ff2972;">
+            <svg>
+                <circle cx="70" cy="70" r="70" id="hh"></circle>
+            </svg>
+            <div id="hours">00<br><span>Hours</span></div>
+        </div>
+
+        <div class="circle" style="--clr:#fee800;">
+            <svg>
+                <circle cx="70" cy="70" r="70" id="mm"></circle>
+            </svg>
+            <div id="minutes">00<br><span>Minutes</span></div>
+        </div>
+
+        <div class="circle" style="--clr:#04fc43;">
+            <svg>
+                <circle cx="70" cy="70" r="70" id="ss"></circle>
+            </svg>
+            <div id="seconds">00<br><span>Seconds</span></div>
+        </div>
+
+    </div>
+
+    <h2 class="yourMsg"><span>Your message</span></h2>
+
+
+    <script>
+
+        let days = document.getElementById('days');
+        let hours = document.getElementById('hours');
+        let minutes = document.getElementById('minutes');
+        let seconds = document.getElementById('seconds');
+
+        let dd = document.getElementById('dd');
+        let hh = document.getElementById('hh');
+        let mm = document.getElementById('mm');
+        let ss = document.getElementById('ss');
+
+        // Date calculation (end) !!! 
+        // Date format in mm/dd/yyyy and time is hh:mm:ss
+        
+        let endDate = '02/14/2024 00:00:00';
+
+        let x = setInterval(function(){
+            let now = new Date(endDate).getTime();
+            let countDown = new Date().getTime();
+            let distance = now - countDown;
+
+            // time calculation for days, hours, minutes and seconds
+            let d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let h = Math.floor((distance % (1000 * 60 * 60 * 24)) / 
+            (1000 * 60 * 60));
+            let m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let s = Math.floor((distance % (1000 * 60)) / (1000));
+
+            // output the result in element with id
+            days.innerHTML = d + "<br><span>Days</span>";
+            hours.innerHTML = h + "<br><span>Hours</span>";
+            minutes.innerHTML = m + "<br><span>Minutes</span>";
+            seconds.innerHTML = s + "<br><span>Seconds</span>";
+
+            // animate stroke
+            // 365 days in an year
+            dd.style.strokeDashoffset = 440 - (440 * d) / 365;
+            // 24 hours in a day
+            hh.style.strokeDashoffset = 440 - (440 * h) / 24;
+            // 60 minutes in a hour
+            mm.style.strokeDashoffset = 440 - (440 * m) / 60;
+            // 60 seconds in a minute
+            ss.style.strokeDashoffset = 440 - (440 * s) / 60;
+
+            // if the count down in over, write happy new yar text
+            if(distance < 0){
+                clearInterval(x);
+                document.getElementById("time").style.display = "none";
+                document.querySelector(".yourMsg").style.display = "block";
+            }
+
+        })
+        
+
+    </script>
+
+</body>
+
+</html>
