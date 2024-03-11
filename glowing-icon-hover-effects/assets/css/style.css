@@ -20,6 +20,8 @@ body {
 ul {
 	position: relative;
 	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 	gap: 50px;
 }
 
@@ -86,7 +88,9 @@ ul li:hover a i {
 
 ul li a span {
 	position: absolute;
-	font-family: sans-serif;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-size: 0.85em;
+	margin-top: 18px;
 	color: var(--clr);
 	opacity: 0;
 	transition: 0.5s;
