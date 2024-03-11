@@ -1,8 +1,6 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
-
 :root {
-    --nav-bg-color: #ffffff;
-    --nav-a-hover-bg-color: #f0f0f0;
+    --nav-color: #ffffff;
+    --nav-a-hover-color: #f0f0f0;
     --nav-a: #000000;
     --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -15,15 +13,16 @@
 
 body {
     min-height: 100vh;
-    background-image: url('../assets/wallpaper.jpg');
+    /* background-image: url('../assets/wallpaper.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(12, 86, 71, 1));
     font-family: var(--main-font)
 }
 
 nav {
-    background-color: var(--nav-bg-color);
+    background-color: var(--nav-color);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -49,7 +48,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--nav-a-hover-bg-color);
+    background-color: var(--nav-a-hover-color);
 }
 
 nav li:first-child {
