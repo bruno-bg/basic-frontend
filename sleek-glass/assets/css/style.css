@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.glass {
+    position: relative;
+    width: 70%;
+    height: 70vh;
+    background: linear-gradient(#fff2, #fff0);
+    border: 1px solid #fff2;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 12px 12px 25px #0004;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.glass span {
+    position: absolute;
+    z-index: 5;
+    color: white;
+    font-size: 5rem;
+    letter-spacing: 1.9rem;
+    font-family: "Rajdhani", sans-serif;
+}
+
+.glass__icons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Tamanho dos ícones */
+    font-size: 2em;
+}
+
+.glass__icons i {
+    background: transparent;
+    /* Tamanho do botão */
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 1px #b9b9b9;
+    margin: 0 7px;
+    transition: 0.5s;
+    cursor: pointer;
+    position: relative;
+    top: 0;
+}
+
+.glass__icons i:hover {
+    /* box-shadow: inset 0px 0px 0px #b9b9b9; */
+    top: -4px;
+}
+
+
+@media(max-width: 450px) {
+    .glass span {
+       font-size: 1.8em;
+    }
+
+    .glass__icons {
+        font-size: 1.2em;
+    }
+
+    .glass__icons i {
+        padding: 5px;
+    }
+}
